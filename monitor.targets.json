@@ -1,0 +1,25 @@
+{
+  "title": "VPS Status",
+  "subtitle": "Bare IP ping via GitHub Actions",
+  "description": "Each endpoint is monitored with ICMP ping against a raw IPv4 or IPv6 address stored in GitHub Secrets.",
+  "targets": [
+    {
+      "name": "主机 1 IPv4",
+      "slug": "host-1-ipv4",
+      "secret": "HOST1_IPV4_IP",
+      "family": 4
+    },
+    {
+      "name": "主机 1 IPv6",
+      "slug": "host-1-ipv6",
+      "secret": "HOST1_IPV6_IP",
+      "family": 6
+    },
+    {
+      "name": "主机 2 IPv4",
+      "slug": "host-2-ipv4",
+      "secret": "HOST2_IPV4_IP",
+      "family": 4
+    }
+  ]
+}
