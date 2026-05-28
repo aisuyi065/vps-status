@@ -1,0 +1,25 @@
+# Upptime 的主配置只改这里。
+# 把下面的占位符替换成你自己的 GitHub 仓库信息和监控目标。
+
+owner: aisuyi065
+repo: vps-status
+user-agent: aisuyi065
+
+sites:
+  - name: VPS HTTP
+    url: https://example.com
+
+status-website:
+  # 如果你有自定义域名，取消下一行注释并改成你的域名。
+  # cname: status.example.com
+  # 如果使用默认 GitHub Pages 地址，把下面这行改成你的仓库名。
+  baseUrl: /vps-status
+  name: VPS Status
+  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  introTitle: "**VPS Status**"
+  introMessage: 这里是基于 Upptime 的状态页，监控对象是你的 VPS。
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
