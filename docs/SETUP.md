@@ -7,7 +7,7 @@
 - `owner`: 当前是 `aisuyi065`
 - `repo`: 当前是 `vps-status`
 - `user-agent`: 当前是 `aisuyi065`
-- `sites`: 监控目标
+- `sites`: 监控目标。真实 IP 不写在这里，只引用 GitHub Secrets
 - `status-website.baseUrl`: 仓库名
 - `status-website.cname`: 如果你有自定义域名再填
 
@@ -16,6 +16,13 @@
 先建这个必需项：
 
 - `GH_PAT`
+
+真实 VPS IP 不要写进 `.upptimerc.yml`。把完整监控 URL 写成 Secret：
+
+- `VPS_IPV4_HTTP_URL`: IPv4 监控地址，例如 `http://192.0.2.10/health`
+- `VPS_IPV6_HTTP_URL`: IPv6 监控地址，例如 `http://[2001:db8::10]/health`
+
+如果 VPS 没有 `/health` 路径，可以先用根路径 `/`。如果是 HTTPS 直连 IP，证书可能因为域名不匹配失败；这种情况下优先用 HTTP 健康检查，或改用域名/反代健康检查。
 
 建议再建通知项：
 
