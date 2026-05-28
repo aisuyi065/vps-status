@@ -1,13 +1,21 @@
 # Upptime 的主配置只改这里。
-# 把下面的占位符替换成你自己的 GitHub 仓库信息和监控目标。
+# 不要把真实 IP 写进公开仓库。真实 IPv4/IPv6 放到 GitHub Secrets：
+# - VPS_IPV4_HTTP_URL，例如 http://192.0.2.10/health
+# - VPS_IPV6_HTTP_URL，例如 http://[2001:db8::10]/health
 
 owner: aisuyi065
 repo: vps-status
 user-agent: aisuyi065
 
 sites:
-  - name: VPS HTTP
-    url: https://example.com
+  - name: VPS IPv4 HTTP
+    slug: vps-ipv4-http
+    url: $VPS_IPV4_HTTP_URL
+    maxResponseTime: 10000
+  - name: VPS IPv6 HTTP
+    slug: vps-ipv6-http
+    url: $VPS_IPV6_HTTP_URL
+    maxResponseTime: 10000
 
 status-website:
   # 如果你有自定义域名，取消下一行注释并改成你的域名。
