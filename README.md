@@ -8,6 +8,11 @@
 - GitHub Secrets
 - 仓库名和 GitHub Pages
 
+不要把真实 VPS IP 写进公开文件。IPv4/IPv6 监控地址应放在 GitHub Secrets：
+
+- `VPS_IPV4_HTTP_URL`
+- `VPS_IPV6_HTTP_URL`
+
 ## 当前状态
 
 <!--live status--> **🟩 All systems operational**
