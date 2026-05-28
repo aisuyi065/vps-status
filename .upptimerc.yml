@@ -1,21 +1,29 @@
 # Upptime 的主配置只改这里。
 # 不要把真实 IP 写进公开仓库。真实 IPv4/IPv6 放到 GitHub Secrets：
-# - VPS_IPV4_HTTP_URL，例如 http://192.0.2.10/health
-# - VPS_IPV6_HTTP_URL，例如 http://[2001:db8::10]/health
+# - HOST1_IPV4_IP，例如 192.0.2.10
+# - HOST1_IPV6_IP，例如 2001:db8::10
+# - HOST2_IPV4_IP，例如 198.51.100.20
 
 owner: aisuyi065
 repo: vps-status
 user-agent: aisuyi065
 
 sites:
-  - name: VPS IPv4 HTTP
-    slug: vps-ipv4-http
-    url: $VPS_IPV4_HTTP_URL
-    maxResponseTime: 10000
-  - name: VPS IPv6 HTTP
-    slug: vps-ipv6-http
-    url: $VPS_IPV6_HTTP_URL
-    maxResponseTime: 10000
+  - name: 主机 1 IPv4
+    slug: host-1-ipv4
+    type: globalping
+    check: icmp-ping
+    url: $HOST1_IPV4_IP
+  - name: 主机 1 IPv6
+    slug: host-1-ipv6
+    type: globalping
+    check: icmp-ping
+    url: $HOST1_IPV6_IP
+  - name: 主机 2 IPv4
+    slug: host-2-ipv4
+    type: globalping
+    check: icmp-ping
+    url: $HOST2_IPV4_IP
 
 status-website:
   # 如果你有自定义域名，取消下一行注释并改成你的域名。
