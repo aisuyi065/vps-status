@@ -1,0 +1,20 @@
+[
+  {
+    "name": "VPS HTTP",
+    "url": "https://example.com",
+    "icon": "https://icons.duckduckgo.com/ip3/example.com.ico",
+    "slug": "vps-http",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 72,
+    "timeDay": 72,
+    "timeWeek": 72,
+    "timeMonth": 72,
+    "timeYear": 72,
+    "dailyMinutesDown": {}
+  }
+]
