@@ -54,7 +54,7 @@ async function pingTarget(target, secretsMap) {
     : ['-4', '-n', '-c', '1', '-W', '2', address];
 
   try {
-    const { stdout, stderr } = await execFileAsync('ping', args, {
+    await execFileAsync('ping', args, {
       encoding: 'utf8',
       timeout: 7000,
       maxBuffer: 1024 * 1024
@@ -66,8 +66,7 @@ async function pingTarget(target, secretsMap) {
       family,
       status: 'up',
       responseTimeMs: Date.now() - startedAt,
-      checkedAt: new Date().toISOString(),
-      detail: trimText(stdout || stderr || '')
+      checkedAt: new Date().toISOString()
     };
   } catch (error) {
     return {
@@ -77,7 +76,6 @@ async function pingTarget(target, secretsMap) {
       status: 'down',
       responseTimeMs: null,
       checkedAt: new Date().toISOString(),
-      detail: trimText(error?.stderr?.toString?.() || error?.message || 'Ping failed'),
       exitCode: typeof error?.code === 'number' ? error.code : null
     };
   }
@@ -413,10 +411,6 @@ async function writeStepSummary(data) {
 function parseSecrets(raw) {
   const parsed = JSON.parse(raw);
   return parsed && typeof parsed === 'object' ? parsed : {};
-}
-
-function trimText(value) {
-  return String(value).trim().replace(/\s+/g, ' ').slice(0, 300);
 }
 
 function escapeHtml(value) {
