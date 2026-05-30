@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-05-30T22:37:38.960Z",
+  "title": "VPS Status",
+  "subtitle": "Bare IP ping via GitHub Actions",
+  "description": "Each endpoint is monitored with ICMP ping against a raw IPv4 or IPv6 address stored in GitHub Secrets.",
+  "summary": {
+    "total": 3,
+    "up": 0,
+    "down": 3,
+    "avgResponseTimeMs": null,
+    "overallStatus": "degraded"
+  },
+  "checks": [
+    {
+      "name": "主机 1 IPv4",
+      "slug": "host-1-ipv4",
+      "family": 4,
+      "status": "down",
+      "responseTimeMs": null,
+      "checkedAt": "2026-05-30T22:37:41.042Z",
+      "exitCode": 1
+    },
+    {
+      "name": "主机 1 IPv6",
+      "slug": "host-1-ipv6",
+      "family": 6,
+      "status": "down",
+      "responseTimeMs": null,
+      "checkedAt": "2026-05-30T22:37:41.045Z",
+      "exitCode": 2
+    },
+    {
+      "name": "主机 2 IPv4",
+      "slug": "host-2-ipv4",
+      "family": 4,
+      "status": "down",
+      "responseTimeMs": null,
+      "checkedAt": "2026-05-30T22:37:43.048Z",
+      "exitCode": 1
+    }
+  ]
+}
